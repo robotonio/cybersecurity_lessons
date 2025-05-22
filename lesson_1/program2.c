@@ -4,9 +4,9 @@
 
 void vuln() {
     char buf[32];
-    printf("Δώσε δεδομένα: ");
-    gets(buf);  // επικίνδυνη συνάρτηση
-    printf("Τέλος vuln()\n");
+    printf("Input data: ");
+    gets(buf);  //danger
+    printf("End of vuln()\n");
 }
 
 int main() {
