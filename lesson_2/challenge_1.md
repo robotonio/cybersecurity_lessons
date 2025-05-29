@@ -6,8 +6,9 @@
 
 **Να δημιουργηθεί πρόγραμμα σε C που:**
 - Διαβάζει γραμμές από αρχείο `input.txt`
-- Τις γράφει ανά 50ms σε αρχείο log
-- Αν το log αρχείο ξεπεράσει τα 1024 bytes, ξεκινά νέο με όνομα `audit_<timestamp>.log`
+- Τις γράφει ανά 1'' σε αρχείο log
+- Αν το log αρχείο ξεπεράσει τα 30000 bytes, ξεκινά νέο με όνομα `audit_<timestamp>.log`
+- Οι καταγραφές πραγματοποιούνται με **system calls** (`open`, `write`, `close`, `fstat`, `rename`)
 
 ---
 
@@ -27,7 +28,7 @@
 #include <sys/stat.h>
 struct stat st;
 fstat(fd, &st);
-if (st.st_size >= 1024) {
+if (st.st_size >= 3000) {
     // rotation
 }
 ```
